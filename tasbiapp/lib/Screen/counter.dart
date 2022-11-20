@@ -9,9 +9,11 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Step 1
     final countProvider = Provider.of<CountProvider>(
       context,
-      //  listen: false
+      // Step 2
+       listen: false
     );
     print("build");
     return Scaffold(
@@ -22,19 +24,21 @@ class Counter extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Consumer<CountProvider>(
-            //   builder: (context, value, child) {
-            // return Text(
-            //   countProvider.count.toString(),
-            //   style: const TextStyle(
-            //       fontSize: 50, fontWeight: FontWeight.bold),
-            // );
-            //   },
-            // )
-            Text(
+            // Step 3  add  consumer widget
+            
+            Consumer<CountProvider>(
+              builder: (context, value, child) {
+            return Text(
               countProvider.count.toString(),
-              style: const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                  fontSize: 50, fontWeight: FontWeight.bold),
+            );
+              },
             )
+//             Text(
+//               countProvider.count.toString(),
+//               style: const TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+//             )
           ],
         ),
       ),
@@ -43,9 +47,9 @@ class Counter extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: () {
+             // Step 4
               countProvider.setcounteradd();
             },
-            tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
