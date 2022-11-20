@@ -14,8 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Step 1 set change notifierProvider like this 
     return ChangeNotifierProvider(
+      // Step 2 call the provider class you have made
       create: (context) => CountProvider(),
+      //Step 3 return child and call the materialapp
       child: MaterialApp(
         title: 'Tasbi App',
         theme: ThemeData(

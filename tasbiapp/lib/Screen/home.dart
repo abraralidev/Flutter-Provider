@@ -10,6 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 int num = 0;
+// this is a Difference Between Stateless Widget and Statefull Widget 
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
