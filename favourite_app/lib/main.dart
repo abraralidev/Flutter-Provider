@@ -14,8 +14,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Step 1 if you want to add multiple providers 
+    // add MultiProvider like this 
     return MultiProvider(
+      
       providers: [
+        // here you can add multiple provider classes
         ChangeNotifierProvider(
           create: (context) => FavouriteItems(),
         ),
