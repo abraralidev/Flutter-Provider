@@ -6,7 +6,7 @@ import 'home.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});
-
+// This file is same as home screen the only differce is highlight in line number 29
   @override
   Widget build(BuildContext context) {
     final providerfavourite = Provider.of<FavouriteItems>(context);
@@ -25,7 +25,9 @@ class FavouriteScreen extends StatelessWidget {
         children: [
           Expanded(
             child: ListView.builder(
+              //---------------------------------------------------------------------------------
               itemCount: providerfavourite.favouriteItems.length,
+                //---------------------------------------------------------------------------------
               itemBuilder: (BuildContext context, int index) {
                 return ListTile(
                     title: Text('Text $index'),
