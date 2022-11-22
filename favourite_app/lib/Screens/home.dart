@@ -11,7 +11,9 @@ class Home extends StatelessWidget {
   List<int> selecteditem = [];
   @override
   Widget build(BuildContext context) {
+    // Step 1 => call provider class you have made in Provider Folder
     final providerfavourite = Provider.of<FavouriteItems>(context);
+    // -----------------------------------------------------------------------
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
@@ -33,6 +35,7 @@ class Home extends StatelessWidget {
                 return ListTile(
                   title: Text('Text $index'),
                   onTap: () {
+                    // step 2 => add some conditions for add item and remove item from favourite screen
                     if (providerfavourite.favouriteItems.contains(index)) {
                       providerfavourite.removeFavouriteItem(index);
                     } else {
@@ -40,6 +43,7 @@ class Home extends StatelessWidget {
                     }
                   
                   },
+                  // Step 3 => add consumer widget and add the icon and add conditions
                   trailing: Consumer<FavouriteItems>(
                     builder: (context, myType, child) {
                       return Icon(
